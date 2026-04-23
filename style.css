@@ -1,10 +1,74 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f0e6;
+  color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: #1f3d2b;
+  color: white;
+}
+
+.nav-btn {
+  background: gold;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+}
+
+/* HERO */
+.hero {
+  background: url('https://images.unsplash.com/photo-1604908176997-431f6a60c7e5') center/cover no-repeat;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.btn {
+  background: #1f7a1f;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+/* SECTIONS */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 15px;
   margin-top: 20px;
 }
 
+.grid div {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* CONTACT */
 .contact-form {
   margin-top: 20px;
   display: flex;
@@ -14,15 +78,23 @@
 
 .contact-form input,
 .contact-form textarea {
-  padding: 10px;
-  border-radius: 5px;
+  padding: 12px;
+  border-radius: 6px;
   border: 1px solid #ccc;
 }
 
 .contact-form button {
   background: #1f7a1f;
   color: white;
-  padding: 10px;
+  padding: 12px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
+}
+
+/* FOOTER */
+footer {
+  background: #1f3d2b;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
