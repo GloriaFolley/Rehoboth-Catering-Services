@@ -3,15 +3,20 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: #f5f0e6;
   color: #333;
+  line-height: 1.6;
 }
 
 /* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 15px 30px;
   background: #1f3d2b;
   color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-btn {
@@ -19,7 +24,14 @@ body {
   padding: 8px 15px;
   text-decoration: none;
   color: black;
-  border-radius: 5px;
+  border-radius: 6px;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 /* HERO */
@@ -29,24 +41,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .overlay {
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.65);
   color: white;
   padding: 40px;
-  text-align: center;
-  border-radius: 10px;
+  border-radius: 12px;
+  max-width: 600px;
 }
 
 .btn {
   background: #1f7a1f;
   color: white;
-  padding: 12px 20px;
+  padding: 12px 22px;
   text-decoration: none;
   border-radius: 6px;
   display: inline-block;
   margin-top: 15px;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 /* SECTIONS */
@@ -55,40 +75,86 @@ section {
   text-align: center;
 }
 
+h2 {
+  margin-bottom: 10px;
+  color: #1f3d2b;
+}
+
+h3 {
+  margin-top: 30px;
+  color: #1f7a1f;
+}
+
+/* GRID SYSTEM */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 15px;
   margin-top: 20px;
+  padding: 0 10px;
 }
 
 .grid div {
   background: white;
   padding: 15px;
   border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
 }
 
-/* CONTACT */
+.grid div:hover {
+  transform: translateY(-5px);
+}
+
+/* CONTACT FORM */
 .contact-form {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select {
   padding: 12px;
   border-radius: 6px;
   border: 1px solid #ccc;
+  font-size: 14px;
+  transition: 0.3s ease;
 }
 
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  outline: none;
+  border: 2px solid #1f7a1f;
+}
+
+/* BUTTON */
 .contact-form button {
   background: #1f7a1f;
   color: white;
   padding: 12px;
   border: none;
   border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* WHATSAPP REQUIREMENTS TEXTAREA */
+textarea {
+  min-height: 100px;
+  resize: vertical;
 }
 
 /* FOOTER */
@@ -97,4 +163,27 @@ footer {
   color: white;
   text-align: center;
   padding: 20px;
+  margin-top: 40px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .hero {
+    height: 75vh;
+    padding: 20px;
+  }
+
+  .overlay {
+    padding: 25px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
 }

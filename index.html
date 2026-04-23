@@ -28,8 +28,8 @@
   <section class="about">
     <h2>About Us</h2>
     <p>
-      Based in North Kaneshie, Accra, we deliver exceptional Ghanaian catering services
-      with rich flavors, elegance, and unforgettable presentation.
+      Based in North Kaneshie, Accra, we deliver high-quality Ghanaian catering services
+      with rich flavors, elegant presentation, and reliable event execution.
     </p>
   </section>
 
@@ -48,14 +48,52 @@
 
   <!-- MENU -->
   <section class="menu">
-    <h2>Popular Dishes</h2>
+    <h2>Our Full Menu</h2>
+
+    <h3>Main Dishes</h3>
     <div class="grid">
       <div>Jollof Rice & Chicken</div>
-      <div>Fried Rice</div>
-      <div>Banku & Tilapia</div>
+      <div>Fried Rice & Chicken</div>
       <div>Waakye</div>
-      <div>Pastries</div>
-      <div>Sobolo & Drinks</div>
+      <div>Banku & Tilapia</div>
+      <div>Fufu & Light Soup</div>
+    </div>
+
+    <h3>Soups & Stews</h3>
+    <div class="grid">
+      <div>Light Soup</div>
+      <div>Groundnut Soup</div>
+      <div>Palm Nut Soup</div>
+      <div>Okro Soup</div>
+      <div>Tomato Stew</div>
+      <div>Garden Egg Stew</div>
+    </div>
+
+    <h3>Pastries & Snacks</h3>
+    <div class="grid">
+      <div>Meat Pie</div>
+      <div>Chicken Pie</div>
+      <div>Spring Rolls</div>
+      <div>Samosa</div>
+      <div>Doughnuts</div>
+      <div>Chin Chin</div>
+      <div>Chips</div>
+    </div>
+
+    <h3>Desserts</h3>
+    <div class="grid">
+      <div>Cake</div>
+      <div>Ice Cream</div>
+      <div>Fruit Salad</div>
+      <div>Custard</div>
+    </div>
+
+    <h3>Drinks</h3>
+    <div class="grid">
+      <div>Sobolo</div>
+      <div>Fresh Juice</div>
+      <div>Soft Drinks</div>
+      <div>Water</div>
     </div>
   </section>
 
@@ -65,23 +103,36 @@
 
     <p><strong>Location:</strong> North Kaneshie, Accra</p>
     <p><strong>Call:</strong> 0502755644</p>
-    <p><strong>WhatsApp:</strong> 0571636986</p>
+    <p><strong>WhatsApp:</strong> +233 57 163 6986</p>
 
     <a class="btn" href="https://wa.me/233571636986" target="_blank">
       Chat on WhatsApp
     </a>
 
-    <!-- FORM -->
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <input type="text" placeholder="Event Type (Wedding, Party...)" required>
-      
-      <!-- NEW FIELD -->
-      <input type="number" placeholder="Number of People Expected" required>
+    <form class="contact-form" onsubmit="sendToWhatsApp(event)">
 
-      <textarea placeholder="Additional Details"></textarea>
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="tel" id="phone" placeholder="Phone Number" required>
+      <input type="email" id="email" placeholder="Email" required>
+
+      <!-- EVENT DROPDOWN -->
+      <select id="event" required>
+        <option value="" disabled selected>Select Event Type</option>
+        <option value="Wedding">Wedding</option>
+        <option value="Corporate">Corporate Event</option>
+        <option value="Private Party">Private Party</option>
+        <option value="Funeral">Funeral</option>
+        <option value="Outdoor Catering">Outdoor Catering</option>
+        <option value="Food Delivery">Food Delivery</option>
+      </select>
+
+      <input type="date" id="date" required>
+      <input type="number" id="people" placeholder="Expected Number of People" required>
+
+      <textarea id="requirements" placeholder="Briefly describe requirements for your event (food, drinks, setup, theme, etc.)" required></textarea>
+
       <button type="submit">Send Booking Request</button>
+
     </form>
   </section>
 
@@ -89,6 +140,43 @@
   <footer>
     <p>© 2026 Rehoboth Catering Services | Accra, Ghana</p>
   </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const email = document.getElementById("email").value;
+      const eventType = document.getElementById("event").value;
+      const date = document.getElementById("date").value;
+      const people = Number(document.getElementById("people").value);
+      const requirements = document.getElementById("requirements").value;
+
+      if (!people || people <= 0) {
+        alert("Please enter a valid number of people");
+        return;
+      }
+
+      const message = `*Rehoboth Catering Booking Request*
+
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+
+Event Type: ${eventType}
+Event Date: ${date}
+Expected People: ${people}
+
+Event Requirements:
+${requirements}
+`;
+
+      const url = "https://wa.me/233571636986?text=" + encodeURIComponent(message);
+      window.open(url, "_blank");
+    }
+  </script>
 
 </body>
 </html>
