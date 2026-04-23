@@ -9,20 +9,27 @@
 
 <body>
 
-  <!-- HERO SECTION -->
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <h2>Rehoboth Catering</h2>
+    <a href="#contact" class="nav-btn">Book Now</a>
+  </nav>
+
+  <!-- HERO -->
   <header class="hero">
-    <h1>Rehoboth Catering Services</h1>
-    <p>Delicious Ghanaian meals for weddings, parties & corporate events</p>
-    <a href="#contact" class="btn">Book an Event</a>
+    <div class="overlay">
+      <h1>Rehoboth Catering Services</h1>
+      <p>Premium catering for weddings, parties & corporate events in Accra</p>
+      <a href="#contact" class="btn">Book Your Event</a>
+    </div>
   </header>
 
   <!-- ABOUT -->
   <section class="about">
     <h2>About Us</h2>
     <p>
-      Based in North Kaneshie, Accra, Rehoboth Catering Services provides high-quality
-      catering for weddings, funerals, corporate events, and private parties.
-      We bring authentic Ghanaian flavors with excellent service to every event.
+      Based in North Kaneshie, Accra, we deliver exceptional Ghanaian catering services
+      with rich flavors, elegance, and unforgettable presentation.
     </p>
   </section>
 
@@ -30,12 +37,12 @@
   <section class="services">
     <h2>Our Services</h2>
     <div class="grid">
-      <div>Wedding Catering</div>
+      <div>Weddings</div>
       <div>Corporate Events</div>
-      <div>Parties & Celebrations</div>
-      <div>Food Delivery</div>
+      <div>Private Parties</div>
+      <div>Funerals</div>
       <div>Outdoor Catering</div>
-      <div>Funeral Catering</div>
+      <div>Food Delivery</div>
     </div>
   </section>
 
@@ -47,30 +54,34 @@
       <div>Fried Rice</div>
       <div>Banku & Tilapia</div>
       <div>Waakye</div>
-      <div>Pastries & Snacks</div>
+      <div>Pastries</div>
       <div>Sobolo & Drinks</div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="contact">
-    <h2>Contact Us</h2>
+    <h2>Book Your Event</h2>
 
-    <p><strong>Location:</strong> North Kaneshie, Accra, Ghana</p>
-    <p><strong>Phone:</strong> 0502755644</p>
+    <p><strong>Location:</strong> North Kaneshie, Accra</p>
+    <p><strong>Call:</strong> 0502755644</p>
     <p><strong>WhatsApp:</strong> 0571636986</p>
 
     <a class="btn" href="https://wa.me/233571636986" target="_blank">
       Chat on WhatsApp
     </a>
 
-    <!-- CONTACT FORM -->
+    <!-- FORM -->
     <form class="contact-form">
       <input type="text" placeholder="Your Name" required>
       <input type="email" placeholder="Your Email" required>
-      <input type="text" placeholder="Event Type (Wedding, Party, etc)" required>
-      <textarea placeholder="Your Message"></textarea>
-      <button type="submit">Send Inquiry</button>
+      <input type="text" placeholder="Event Type (Wedding, Party...)" required>
+      
+      <!-- NEW FIELD -->
+      <input type="number" placeholder="Number of People Expected" required>
+
+      <textarea placeholder="Additional Details"></textarea>
+      <button type="submit">Send Booking Request</button>
     </form>
   </section>
 
