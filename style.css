@@ -1,38 +1,28 @@
-body {
-  font-family: Arial;
-  margin: 0;
-  padding: 0;
-  background: #f7f3e9;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
 }
 
-.hero {
-  background: #8b5e3c;
-  color: white;
-  text-align: center;
-  padding: 80px 20px;
+.contact-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.btn {
-  background: gold;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: black;
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
   border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-section {
-  padding: 40px;
-  text-align: center;
-}
-
-.menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-footer {
-  background: #333;
+.contact-form button {
+  background: #1f7a1f;
   color: white;
-  text-align: center;
-  padding: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
 }
