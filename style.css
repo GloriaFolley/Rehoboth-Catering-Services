@@ -1,8 +1,22 @@
-body {
+/* RESET */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY BACKGROUND (Luxury textured + overlay) */
+body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f5f0e6;
-  color: #333;
+  color: #2b2b2b;
+
+  background:
+    linear-gradient(rgba(245, 240, 230, 0.94), rgba(245, 240, 230, 0.94)),
+    url("https://images.unsplash.com/photo-1555244162-803834f70033");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   line-height: 1.6;
 }
 
@@ -11,22 +25,29 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  background: #1f3d2b;
+  padding: 15px 40px;
+
+  background: linear-gradient(90deg, #0f2e1f, #1f3d2b);
   color: white;
+
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
+.navbar h2 {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
 .nav-btn {
-  background: gold;
-  padding: 8px 15px;
-  text-decoration: none;
-  color: black;
+  background: #d4af37;
+  color: #000;
+  padding: 10px 18px;
   border-radius: 6px;
-  transition: 0.3s ease;
+  text-decoration: none;
   font-weight: 500;
+  transition: 0.3s;
 }
 
 .nav-btn:hover {
@@ -36,8 +57,15 @@ body {
 
 /* HERO */
 .hero {
-  background: url('https://images.unsplash.com/photo-1604908176997-431f6a60c7e5') center/cover no-repeat;
-  height: 90vh;
+  height: 95vh;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba");
+
+  background-size: cover;
+  background-position: center;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,38 +73,48 @@ body {
 }
 
 .overlay {
-  background: rgba(0,0,0,0.65);
   color: white;
+  max-width: 700px;
   padding: 40px;
-  border-radius: 12px;
-  max-width: 600px;
+}
+
+.overlay h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: 18px;
 }
 
 .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 25px;
+
   background: #1f7a1f;
   color: white;
-  padding: 12px 22px;
-  text-decoration: none;
   border-radius: 6px;
-  display: inline-block;
-  margin-top: 15px;
-  transition: 0.3s ease;
-  font-weight: 500;
+  text-decoration: none;
+
+  transition: 0.3s;
 }
 
 .btn:hover {
   transform: scale(1.05);
-  opacity: 0.9;
 }
 
 /* SECTIONS */
 section {
-  padding: 60px 20px;
-  text-align: center;
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: 40px auto;
 }
 
+/* HEADINGS */
 h2 {
-  margin-bottom: 10px;
+  font-size: 30px;
+  margin-bottom: 15px;
   color: #1f3d2b;
 }
 
@@ -85,21 +123,33 @@ h3 {
   color: #1f7a1f;
 }
 
-/* GRID SYSTEM */
+/* GLASS CARD EFFECT */
+.about,
+.services,
+.menu,
+.contact {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 15px;
   margin-top: 20px;
-  padding: 0 10px;
 }
 
 .grid div {
   background: white;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-  transition: 0.3s ease;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  transition: 0.3s;
 }
 
 .grid div:hover {
@@ -112,9 +162,6 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .contact-form input,
@@ -124,7 +171,6 @@ h3 {
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 14px;
-  transition: 0.3s ease;
 }
 
 .contact-form input:focus,
@@ -142,19 +188,16 @@ h3 {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 15px;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
 .contact-form button:hover {
-  opacity: 0.9;
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
-/* WHATSAPP REQUIREMENTS TEXTAREA */
+/* TEXTAREA */
 textarea {
   min-height: 100px;
-  resize: vertical;
 }
 
 /* FOOTER */
@@ -163,27 +206,21 @@ footer {
   color: white;
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
-/* RESPONSIVE DESIGN */
+/* MOBILE */
 @media (max-width: 768px) {
-  .hero {
-    height: 75vh;
-    padding: 20px;
-  }
-
-  .overlay {
-    padding: 25px;
+  .overlay h1 {
+    font-size: 28px;
   }
 
   .navbar {
     flex-direction: column;
     gap: 10px;
-    text-align: center;
   }
 
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  section {
+    margin: 20px;
   }
 }
