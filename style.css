@@ -1,4 +1,125 @@
-/* RESET */
+/* ================= DELIVERY SECTION ================= */
+.delivery-wrapper {
+  text-align: center;
+  background: rgba(255,255,255,0.05);
+  padding: 40px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.delivery-title {
+  font-size: 1.8rem;
+  margin: 15px 0;
+}
+
+.delivery-desc {
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.delivery-benefits {
+  margin: 20px 0;
+}
+
+.benefit-item {
+  margin: 8px 0;
+  opacity: 0.9;
+}
+
+.delivery-cta {
+  margin-top: 20px;
+}
+
+.delivery-btn {
+  display: inline-block;
+  background: #22c55e;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.delivery-btn:hover {
+  background: #16a34a;
+  transform: scale(1.05);
+}
+
+/* ================= MENU IMPROVEMENTS ================= */
+.menu-category {
+  margin-bottom: 40px;
+}
+
+.menu-category h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #f1f5f9;
+}
+
+/* ================= FORM IMPROVEMENTS ================= */
+input, select, textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.9);
+  color: #111;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid #22c55e;
+}
+
+button {
+  padding: 12px;
+  background: #22c55e;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #16a34a;
+  transform: scale(1.02);
+}
+
+/* ================= NAV IMPROVEMENT ================= */
+.nav-right a {
+  transition: 0.2s;
+}
+
+.nav-right a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .delivery-title {
+    font-size: 1.4rem;
+  }
+}/* RESET */
 * {
   margin: 0;
   padding: 0;
