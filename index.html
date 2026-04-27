@@ -1,182 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rehoboth Catering Services</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rehoboth Catering Services</title>
+
+<style>
+/* ================= BASE ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0f172a;
+  color: white;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  z-index: 1000;
+}
+
+.navbar h3 {
+  font-size: 18px;
+}
+
+/* RIGHT SIDE */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-right a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.nav-right a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* BOOK BUTTON */
+.book-btn {
+  background: #22c55e;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* ================= HERO ================= */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background: radial-gradient(circle at top, #1e293b, #0f172a);
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.primary-btn {
+  background: #22c55e;
+  padding: 12px 18px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.secondary-btn {
+  border: 2px solid white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+/* ================= CARDS ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: rgba(255,255,255,0.06);
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.1);
+}
+
+/* ================= FORM ================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  padding: 10px;
+  background: #22c55e;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.6;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <h2>Rehoboth Catering</h2>
-    <a href="#contact" class="nav-btn">Book Now</a>
-  </nav>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <h3>Rehoboth Catering</h3>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="overlay">
-      <h1>Rehoboth Catering Services</h1>
-      <p>Premium catering for weddings, parties & corporate events in Accra</p>
-      <a href="#contact" class="btn">Book Your Event</a>
+  <div class="nav-right">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#menu">Menu</a>
+    <a href="#delivery">Delivery</a>
+    <a href="#booking" class="book-btn">📅 Book Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div id="home" class="hero">
+  <div class="hero-content">
+    <h1>Rehoboth Catering Services</h1>
+    <p>Bringing the warmth, richness, and vibrant flavors of tradition to your most cherished celebrations.</p>
+
+    <div class="hero-cta">
+      <a href="#menu" class="primary-btn">🍽️ View Menu</a>
+      <a href="#booking" class="secondary-btn">📅 Book Event</a>
     </div>
-  </header>
+  </div>
+</div>
 
-  <!-- ABOUT -->
-  <section class="about">
-    <h2>About Us</h2>
+<!-- ABOUT -->
+<div id="about" class="section">
+  <h2>About Us</h2>
+  <div class="card">
     <p>
-      Based in North Kaneshie, Accra, we deliver high-quality Ghanaian catering services
-      with rich flavors, elegant presentation, and reliable event execution.
+      Rehoboth Catering Services delivers high-quality meals and exceptional catering
+      experiences across Accra. We focus on taste, hygiene, presentation, and professionalism.
     </p>
-  </section>
+  </div>
+</div>
 
-  <!-- SERVICES -->
-  <section class="services">
-    <h2>Our Services</h2>
+<!-- SERVICES -->
+<div id="services" class="section">
+  <h2>Services</h2>
+  <div class="grid">
+    <div class="card">Weddings</div>
+    <div class="card">Corporate Events</div>
+    <div class="card">Private Parties</div>
+    <div class="card">Funerals</div>
+    <div class="card">Outdoor Catering</div>
+    <div class="card">Food Delivery</div>
+  </div>
+</div>
+
+<!-- MENU -->
+<div id="menu" class="section">
+
+  <h2>Our Full Menu</h2>
+  <p style="opacity:0.8; margin-bottom:10px;">
+    A Feast for Every Occasion
+  </p>
+
+  <p style="opacity:0.6; margin-bottom:30px;">
+    From Ghanaian classics to continental delights — every dish crafted with care.
+  </p>
+
+  <!-- ================= GHANAIAN ================= -->
+  <div class="menu-category">
+    <h3>🍚 Ghanaian Specialties</h3>
+
     <div class="grid">
-      <div>Weddings</div>
-      <div>Corporate Events</div>
-      <div>Private Parties</div>
-      <div>Funerals</div>
-      <div>Outdoor Catering</div>
-      <div>Food Delivery</div>
+      <div class="card"><b>Jollof Rice</b><br><small>Slow-cooked tomato rice with spices</small></div>
+      <div class="card"><b>Waakye</b><br><small>Rice & beans served with stew and sides</small></div>
+      <div class="card"><b>Banku with Tilapia</b><br><small>Served with grilled tilapia & pepper</small></div>
+      <div class="card"><b>Fufu with Light Soup</b><br><small>Pounded cassava with rich soup</small></div>
+      <div class="card"><b>Kenkey with Fish</b><br><small>Fermented corn dumplings & fish</small></div>
+      <div class="card"><b>Fried Rice</b><br><small>Vegetable rice with chicken or beef</small></div>
     </div>
-  </section>
+  </div>
 
-  <!-- MENU -->
-  <section class="menu">
-    <h2>Our Full Menu</h2>
+  <!-- ================= GRILLS ================= -->
+  <div class="menu-category">
+    <h3>🔥 Grills & Proteins</h3>
 
-    <h3>Main Dishes</h3>
     <div class="grid">
-      <div>Jollof Rice & Chicken</div>
-      <div>Fried Rice & Chicken</div>
-      <div>Waakye</div>
-      <div>Banku & Tilapia</div>
-      <div>Fufu & Light Soup</div>
+      <div class="card"><b>Grilled Tilapia</b></div>
+      <div class="card"><b>Grilled Chicken</b></div>
+      <div class="card"><b>Suya Beef</b></div>
+      <div class="card"><b>Assorted Meat Platter</b></div>
+      <div class="card"><b>Kelewele</b></div>
     </div>
+  </div>
 
-    <h3>Soups & Stews</h3>
+  <!-- ================= SOUPS ================= -->
+  <div class="menu-category">
+    <h3>🍲 Soups & Stews</h3>
+
     <div class="grid">
-      <div>Light Soup</div>
-      <div>Groundnut Soup</div>
-      <div>Palm Nut Soup</div>
-      <div>Okro Soup</div>
-      <div>Tomato Stew</div>
-      <div>Garden Egg Stew</div>
+      <div class="card">Light Soup</div>
+      <div class="card">Groundnut Soup</div>
+      <div class="card">Palm Nut Soup</div>
+      <div class="card">Garden Egg Stew</div>
+      <div class="card">Kontomire Stew</div>
+      <div class="card"> Gravy Stew</div>
     </div>
+  </div>
 
-    <h3>Pastries & Snacks</h3>
+  <!-- ================= CONTINENTAL ================= -->
+  <div class="menu-category">
+    <h3>🍝 Continental & Buffet</h3>
+
     <div class="grid">
-      <div>Meat Pie</div>
-      <div>Chicken Pie</div>
-      <div>Spring Rolls</div>
-      <div>Samosa</div>
-      <div>Doughnuts</div>
-      <div>Chin Chin</div>
-      <div>Chips</div>
+      <div class="card">Vegetable Fried Rice</div>
+      <div class="card">Assorted Salads</div>
+      <div class="card">Dinner Rolls</div>
+      <div class="card">Mashed Potatoes</div>
     </div>
+  </div>
 
-    <h3>Desserts</h3>
+  <!-- ================= SMALL CHOPS ================= -->
+  <div class="menu-category">
+    <h3>🥟 Starters & Small Chops</h3>
+
     <div class="grid">
-      <div>Cake</div>
-      <div>Ice Cream</div>
-      <div>Fruit Salad</div>
-      <div>Custard</div>
+      <div class="card">Chin Chin</div>
+      <div class="card">Meat Pies</div>
+      <div class="card">Spring Rolls</div>
+      <div class="card">Samosas</div>
     </div>
+  </div>
 
-    <h3>Drinks</h3>
+  <!-- ================= PASTRIES ================= -->
+  <div class="menu-category">
+    <h3>🥐 Pastries & Baked Goods</h3>
+
     <div class="grid">
-      <div>Sobolo</div>
-      <div>Fresh Juice</div>
-      <div>Soft Drinks</div>
-      <div>Water</div>
+      <div class="card">Croissants</div>
+      <div class="card">Sausage Rolls</div>
+      <div class="card">Baked Chips</div>
+      <div class="card">Meat / Fish Pie</div>
+      <div class="card">Jam Doughnuts</div>
+      <div class="card">Bofrot</div>
+      <div class="card">Banana Bread</div>
+      <div class="card">Shortbread</div>
+      <div class="card">Chin Chin</div>
     </div>
-  </section>
+  </div>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <h2>Book Your Event</h2>
+  <!-- ================= DRINKS ================= -->
+  <div class="menu-category">
+    <h3>🥤 Beverages</h3>
 
-    <p><strong>Location:</strong> North Kaneshie, Accra</p>
-    <p><strong>Call:</strong> 0502755644</p>
-    <p><strong>WhatsApp:</strong> +233 57 163 6986</p>
+    <div class="grid">
+      <div class="card">Sobolo</div>
+      <div class="card">Asana</div>
+      <div class="card">Fruit Punch</div>
+      <div class="card">Soft Drinks</div>
+      <div class="card">Water</div>
+    </div>
+  </div>
 
-    <a class="btn" href="https://wa.me/233571636986" target="_blank">
-      Chat on WhatsApp
-    </a>
+  <!-- ================= DESSERTS ================= -->
+  <div class="menu-category">
+    <h3>🍰 Desserts</h3>
 
-    <form class="contact-form" onsubmit="sendToWhatsApp(event)">
+    <div class="grid">
+      <div class="card">Fruit Salad</div>
+      <div class="card">Cakes</div>
+      <div class="card">Ice Cream</div>
+    </div>
+  </div>
 
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="tel" id="phone" placeholder="Phone Number" required>
-      <input type="email" id="email" placeholder="Email" required>
+</div>
 
-      <!-- EVENT DROPDOWN -->
-      <select id="event" required>
-        <option value="" disabled selected>Select Event Type</option>
-        <option value="Wedding">Wedding</option>
-        <option value="Corporate">Corporate Event</option>
-        <option value="Private Party">Private Party</option>
-        <option value="Funeral">Funeral</option>
-        <option value="Outdoor Catering">Outdoor Catering</option>
-        <option value="Food Delivery">Food Delivery</option>
-      </select>
+<!-- DELIVERY -->
+<div id="delivery" class="section">
+
+  <div class="delivery-wrapper">
+
+    <h2>Food Delivery</h2>
+
+    <h3 class="delivery-title">
+      Gourmet Meals,<br>Delivered to Your Door
+    </h3>
+
+    <p class="delivery-desc">
+      We offer premium food delivery across Accra for all occasions.
+    </p>
+
+    <div class="delivery-benefits">
+      <div class="benefit-item">✔ Freshly prepared to order</div>
+      <div class="benefit-item">✔ Premium packaging</div>
+      <div class="benefit-item">✔ Fast delivery</div>
+    </div>
+
+    <div class="delivery-cta">
+      <a href="https://wa.me/233571636986?text=Hello%20I%20want%20to%20order%20food"
+         class="delivery-btn"
+         target="_blank">
+         🍽️ Order Now on WhatsApp
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- BOOKING -->
+<div id="booking" class="section">
+  <h2>Book Event</h2>
+
+  <div class="card">
+    <form onsubmit="sendToWhatsApp(event)">
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="tel" id="phone" placeholder="Phone" required>
+
+      <!-- EVENT TYPE -->
+<label for="event"></label>
+<select id="event" name="event" required>
+
+  <option value="" disabled selected>Select Event Type</option>
+
+  <option value="Wedding / Engagement">Wedding / Engagement</option>
+  <option value="Corporate Events">Corporate Events</option>
+  <option value="Funerals">Funerals</option>
+  <option value="Birthdays / Anniversaries">Birthdays / Anniversaries</option>
+  <option value="Bulk Orders">Bulk Orders</option>
+  <option value="Other">Other</option>
+
+</select>
+
+<!-- OTHER EVENT (ALWAYS VISIBLE IN HTML VERSION) -->
+<input 
+  type="text" 
+  id="otherEvent" 
+  name="otherEvent"
+  placeholder="If Other, specify event type here (optional)">
 
       <input type="date" id="date" required>
-      <input type="number" id="people" placeholder="Expected Number of People" required>
+      <input type="number" id="people" placeholder="Guests" required>
 
-      <textarea id="requirements" placeholder="Briefly describe requirements for your event (food, drinks, setup, theme, etc.)" required></textarea>
+      <textarea id="msg" placeholder="Event details"></textarea>
 
-      <button type="submit">Send Booking Request</button>
-
+      <button type="submit">Send Booking</button>
     </form>
-  </section>
+  </div>
+</div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Rehoboth Catering Services | Accra, Ghana</p>
-  </footer>
+<!-- FOOTER -->
+<footer>
+  © 2026 Rehoboth Catering Services
+</footer>
 
-  <!-- SCRIPT -->
-  <script>
-    function sendToWhatsApp(event) {
-      event.preventDefault();
+<script>
+function sendToWhatsApp(e){
+  e.preventDefault();
 
-      const name = document.getElementById("name").value;
-      const phone = document.getElementById("phone").value;
-      const email = document.getElementById("email").value;
-      const eventType = document.getElementById("event").value;
-      const date = document.getElementById("date").value;
-      const people = Number(document.getElementById("people").value);
-      const requirements = document.getElementById("requirements").value;
+  const text =
+`Booking Request:
+Name: ${name.value}
+Phone: ${phone.value}
+Event: ${event.value}
+Date: ${date.value}
+Guests: ${people.value}
+Details: ${msg.value}`;
 
-      if (!people || people <= 0) {
-        alert("Please enter a valid number of people");
-        return;
-      }
-
-      const message = `*Rehoboth Catering Booking Request*
-
-Name: ${name}
-Phone: ${phone}
-Email: ${email}
-
-Event Type: ${eventType}
-Event Date: ${date}
-Expected People: ${people}
-
-Event Requirements:
-${requirements}
-`;
-
-      const url = "https://wa.me/233571636986?text=" + encodeURIComponent(message);
-      window.open(url, "_blank");
-    }
-  </script>
+  window.open("https://wa.me/233571636986?text=" + encodeURIComponent(text));
+}
+</script>
 
 </body>
 </html>
