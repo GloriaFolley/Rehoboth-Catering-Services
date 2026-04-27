@@ -1,42 +1,31 @@
-function sendToWhatsApp(event) {
-  event.preventDefault();
+function sendToWhatsApp(e){
+  e.preventDefault();
 
-  // Collect form data
-  const name = document.getElementById("name").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const eventType = document.getElementById("event").value;
-  const date = document.getElementById("date").value;
-  const people = Number(document.getElementById("people").value);
-  const requirements = document.getElementById("requirements").value.trim();
+  const name = document.getElementById("name");
+  const phone = document.getElementById("phone");
+  const event = document.getElementById("event");
+  const date = document.getElementById("date");
+  const people = document.getElementById("people");
+  const msg = document.getElementById("msg");
+  const otherEvent = document.getElementById("otherEvent");
 
-  // Basic validation
-  if (!name || !phone || !email || !eventType || !date || !requirements) {
-    alert("Please fill in all required fields.");
-    return;
-  }
+  const eventType = (event.value === "Other" && otherEvent.value.trim() !== "")
+    ? otherEvent.value
+    : event.value;
 
-  if (!people || people <= 0) {
-    alert("Please enter a valid number of people.");
-    return;
-  }
-
-  // Build WhatsApp message
-  const message = `*Rehoboth Catering Booking Request*
-
-👤 Name: ${name}
-📞 Phone: ${phone}
-📧 Email: ${email}
-
-🎉 Event Type: ${eventType}
-📅 Event Date: ${date}
-👥 Expected People: ${people}
-
-📝 Requirements:
-${requirements}
+  const text = `
+Booking Request:
+------------------------
+Name: ${name.value}
+Phone: ${phone.value}
+Event: ${eventType}
+Date: ${date.value}
+Guests: ${people.value}
+Details: ${msg.value}
 `;
 
-  const url = "https://wa.me/233571636986?text=" + encodeURIComponent(message);
-
-  window.open(url, "_blank");
+  window.open(
+    "https://wa.me/233571636986?text=" + encodeURIComponent(text),
+    "_blank"
+  );
 }
